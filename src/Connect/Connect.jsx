@@ -1,19 +1,19 @@
 import React from 'react';
 import { motion } from "framer-motion";
-import emailjs from "@emailjs/browser"; // Import EmailJS
+import emailjs from "@emailjs/browser";
 import { ToastContainer, toast } from "react-toastify";
 import { useState } from "react";
-import { Element } from 'react-scroll'; // Import Element from react-scroll
+import { Element } from 'react-scroll';
+
 const Connect = () => {
 
-     // State for form inputs
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    budget: "",
     message: "",
   });
 
-  // Handle input changes
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -22,31 +22,23 @@ const Connect = () => {
     });
   };
 
-  // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Send email using EmailJS
     emailjs
       .send(
-        "service_7v2qo1r", // Replace with your Service ID
-        "template_iijhinl", // Replace with your Template ID
+        "service_7v2qo1r",
+        "template_iijhinl",
         formData,
-        "ZBqoi0g-goT7OmdME" // Replace with your Public Key
+        "ZBqoi0g-goT7OmdME"
       )
       .then(
         (response) => {
-          console.log(
-            "Email sent successfully!",
-            response.status,
-            response.text
-          );
           toast.success("Email sent successfully!", {
             position: "top-right",
             autoClose: 3000,
           });
-          //alert("Thank you for reaching out! I will get back to you soon.");
-          setFormData({ name: "", email: "", message: "" }); // Reset the form
+          setFormData({ name: "", email: "", budget: "", message: "" });
         },
         (error) => {
           console.error("Failed to send email:", error);
@@ -57,75 +49,83 @@ const Connect = () => {
 
   return (
     <>
-        <Element name="connect">
+      <Element name="connect">
         <motion.div
           initial={{ opacity: 0, y: 110 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false }}
           transition={{ duration: 1.5 }}
         >
-          <div className="hire mt-[3%]">
-            <div className="flex justify-center">
-              <h1 className="hire-1 text-xl">Connect with Me</h1>
-            </div>
-            <div className="flex justify-center items-center h-screen p-4">
+          <div className="hire mt-[3%] ml-[8%] mr-[8%]">    
+            <div className="flex justify-between items-center h-screen p-4">
+              <div className="text-left max-w-md">
+                <h1 className="text-3xl font-bold mb-4">
+                  Have projects in mind? Let’s work <span className="text-[#3B82F6]">together</span>
+                </h1>
+                <p className="text-black-300 mb-6">
+                  Have a project in mind? Looking to partner or work together? Reach out through the form and I’ll get back to you in the next 48 hours.
+                </p>
+                <p className="text-black-300 mb-2">📧 beingliving0@gmail.com</p>
+                <p className="text-black-300">📞 +91 8077147124</p>
+              </div>
+
               <form
                 onSubmit={handleSubmit}
-                className="bg-gray-800 bg-opacity-90 p-6 rounded-lg shadow-lg w-full max-w-md"
+                className="bg-[#f1f1f1] bg-opacity-90 p-6 rounded-lg shadow-lg w-full max-w-md"
               >
-                <h2 className="text-center text-2xl font-bold text-white mb-6">
-                  Contact Us
-                </h2>
+                <h2 className="text-center text-2xl mb-6">Fill the form below*</h2>
                 <div className="mb-4">
-                  <label htmlFor="name" className="block text-gray-200 mb-2">
-                    Name
-                  </label>
                   <input
                     type="text"
                     id="name"
                     name="name"
                     value={formData.name}
                     onChange={handleInputChange}
-                    placeholder="Your Name"
-                    className="w-full p-3 rounded-lg bg-white text-gray-800 border border-gray-300 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    placeholder="First Name"
+                    className="w-full p-3 rounded-lg bg-white text-gray-800 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
                     required
                   />
                 </div>
                 <div className="mb-4">
-                  <label htmlFor="email" className="block text-gray-200 mb-2">
-                    Email
-                  </label>
                   <input
                     type="email"
                     id="email"
                     name="email"
                     value={formData.email}
                     onChange={handleInputChange}
-                    placeholder="Your Email"
-                    className="w-full p-3 rounded-lg bg-white text-gray-800 border border-gray-300 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    placeholder="Enter your mail"
+                    className="w-full p-3 rounded-lg bg-white text-gray-800 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
                     required
                   />
                 </div>
+                <div className="mb-4">
+                  <input
+                    type="text"
+                    id="budget"
+                    name="budget"
+                    value={formData.budget}
+                    onChange={handleInputChange}
+                    placeholder="Your budget"
+                    className="w-full p-3 rounded-lg bg-white text-gray-800 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  />
+                </div>
                 <div className="mb-6">
-                  <label htmlFor="message" className="block text-gray-200 mb-2">
-                    Message
-                  </label>
                   <textarea
                     id="message"
                     name="message"
                     value={formData.message}
                     onChange={handleInputChange}
                     rows="4"
-                    placeholder="Your Message"
-                    className="w-full p-3 rounded-lg bg-white text-gray-800 border border-gray-300 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    placeholder="Type your message"
+                    className="w-full p-3 rounded-lg bg-white text-gray-800 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
                     required
                   ></textarea>
                 </div>
                 <button
                   type="submit"
-                  className="w-full py-3 bg-blue-500 text-white font-bold rounded-lg hover:bg-blue-600 transition duration-300 shadow-lg"
+                  className="w-full py-3 bg-[#3B82F6] text-white font-bold rounded-lg hover:opacity-90 transition duration-300 shadow-lg"
                 >
-                  Send
+                  Submit Now →
                 </button>
                 <ToastContainer />
               </form>
@@ -135,7 +135,7 @@ const Connect = () => {
       </Element>
       <hr />
     </>
-  )
+  );
 }
 
-export default Connect
+export default Connect;

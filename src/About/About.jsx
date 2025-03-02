@@ -19,7 +19,8 @@ function About() {
           />
           <ul className="flex items-center gap-5 ">
             <li className="hover:underline hover:cursor-pointer hover:text-[#3B82F6]">
-              RESUME
+            <a href="./images/ayush-01.pdf" target="blank">RESUME</a>
+              
             </li>
             <li className="hover:underline hover:cursor-pointer hover:text-[#3B82F6]">
               PROJECTS
@@ -51,7 +52,7 @@ function About() {
             </div>
             <div className="wrapper-ii">
               <div className="typing-demo-ii pb-[20px]">
-                And I'm a Frontend Developer.
+                And I'm a Full Stack Developer.
               </div>
             </div>
             <button
@@ -67,10 +68,10 @@ function About() {
                     ✕
                   </button>
                 </form>
-                <h3 className="font-bold text-lg">
+                <h3 className=" text-lg tracking-widest">
                   Hello, I’m Ayush Kumar! 👋
                 </h3>
-                <p className="py-4">
+                <p className="py-4 tracking-widest">
                   I’m a passionate Full Stack Developer Trainee at Skillyards
                   Versatility Pvt. Ltd., where I’m constantly learning and
                   building innovative projects. I hold a B.Tech in Computer
@@ -90,7 +91,7 @@ function About() {
                   to shoot a testimonial video sharing my growth at Skillyards.
                   I’m excited to keep learning, building, and connecting with
                   like-minded developers. Let’s create something amazing
-                  together! 🚀{" "}
+                  together! 
                 </p>
               </div>
             </dialog>
