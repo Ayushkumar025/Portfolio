@@ -1,12 +1,11 @@
 import React from 'react'
 
-
 const Footer = () => {
   return (
     <>
-        <div className="flex justify-center bg-[#f1f1f1] p-4 tracking-widest">
+      <div className="flex flex-col sm:flex-row justify-center bg-[#f1f1f1] p-4 tracking-widest">
         <p>© 2024 Ayush Kumar</p>
-        <div className="flex gap-4 ml-4">
+        <div className="flex gap-4 mt-2 sm:mt-0 sm:ml-4">
           <a
             href="https://github.com/yourusername"
             target="_blank"

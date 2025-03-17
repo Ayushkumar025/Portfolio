@@ -7,8 +7,6 @@ import Skill from './Skill/Skill'
 import Project from './Project/Project'
 
 function App() {
-  
-
   return (
     <>
       <BrowserRouter>

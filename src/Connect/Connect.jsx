@@ -57,8 +57,8 @@ const Connect = () => {
           transition={{ duration: 1.5 }}
         >
           <div className="hire mt-[3%] ml-[8%] mr-[8%]">    
-            <div className="flex justify-between items-center h-screen p-4">
-              <div className="text-left max-w-md">
+            <div className="flex flex-col lg:flex-row justify-between items-center h-auto lg:h-screen p-4">
+              <div className="text-left max-w-md mb-8 lg:mb-0">
                 <h1 className="text-3xl font-bold mb-4">
                   Have projects in mind? Let’s work <span className="text-[#3B82F6]">together</span>
                 </h1>

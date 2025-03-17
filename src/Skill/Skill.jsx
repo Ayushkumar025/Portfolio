@@ -46,7 +46,7 @@ const Skills = () => {
         viewport={{ once: false }}
         transition={{ duration: 1.5 }}
       >
-        <div className="skills-section mt-10 mb-10">
+        <div className="skills-section mt-10 mb-10 px-4 sm:px-0">
           <h1 className="text-2xl text-center mb-6">SKILLS</h1>
           {skillCategories.map((category, index) => (
             <div key={index} className="mb-8">
@@ -55,7 +55,7 @@ const Skills = () => {
                 {category.skills.map((skill, i) => (
                   <div
                     key={i}
-                    className="border w-40  rounded-2xl shadow-xl hover:shadow-2xl transform hover:scale-105 transition-transform duration-300"
+                    className="border w-full sm:w-40 rounded-2xl shadow-xl hover:shadow-2xl transform hover:scale-105 transition-transform duration-300"
                   >
                     <div className="overflow-hidden rounded-t-2xl p-4">
                       <img

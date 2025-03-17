@@ -36,15 +36,15 @@ const Project = () => {
           viewport={{ once: false }}
           transition={{ duration: 1.5 }}
         >
-          <div className="projects mt-[3%] mb-[3%]">
+          <div className="projects mt-[3%] mb-[3%] px-4 sm:px-0">
             <div className="flex justify-center">
               <h1 className="projects-1 text-xl">Some of my Recent Projects</h1>
             </div>
-            <div className="flex gap-10 mt-[3%] justify-center flex-wrap">
+            <div className="flex gap-4 sm:gap-10 mt-[3%] justify-center flex-wrap">
               {projects.map((project) => (
                 <div
                   key={project.id}
-                  className="border w-80 bg-[#f1f1f1] rounded-2xl shadow-xl hover:shadow-2xl transform hover:scale-105 transition-transform duration-300"
+                  className="border w-full sm:w-80 bg-[#f1f1f1] rounded-2xl shadow-xl hover:shadow-2xl transform hover:scale-105 transition-transform duration-300"
                 >
                   <div className="overflow-hidden rounded-t-2xl">
                     <img

@@ -1,66 +1,72 @@
-.first .second .third{
+.first .second .third {
     background-blend-mode: color-burn;
-    
-}
-
-/* .wrapper {
-    display: grid;
-} */
-
-.typing-demo {
-width: 29ch;
-animation: typing 4s steps(29), blink .5s step-end infinite alternate;
-white-space: nowrap;
-overflow: hidden;
-/* border-right: 3px solid; */
-/* font-family: monospace; */
-font-size: 2em;
-}
-
-@keyframes typing {
-from {
-    width: 0
-    }
-}
-
-@keyframes blink {
-    50% {
-    border-color: transparent
-    }
-}
-
-/* .wrapper-ii {
-    display: grid;
-    place-items: center;
-} */
-
-.typing-demo-ii {
-    width: 32ch;
-    animation: typing 4s steps(32), blink .5s step-end 4s infinite alternate;
+  }
+  
+  .typing-demo {
+    animation: typing 4s steps(29), blink 0.5s step-end infinite alternate;
     white-space: nowrap;
     overflow: hidden;
-    /* border-right: 3px solid; */
     font-size: 2em;
-    animation-delay: 4s;
-}
-
-@keyframes typing {
+  }
+  
+  .typing-demo-ii {
+    animation: typing 4s steps(32), blink 0.5s step-end infinite alternate;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 2em;
+    animation-delay: 4s; /* Fixed typo: changed "delay" to "animation-delay" */
+  }
+  
+  @keyframes typing {
     from {
-        width: 0
+      width: 0;
     }
-}
-
-@keyframes blink {
+    to {
+      width: 100%; /* Allow the text to fill the container */
+    }
+  }
+  
+  @keyframes blink {
     50% {
-        border-color: transparent
+      border-color: transparent;
     }
-}
-
-.projects .projects-1{
+  }
+  
+  .projects .projects-1 {
     font-size: 2em;
-}
-
-.hire .hire-1{
+  }
+  
+  .hire .hire-1 {
     font-size: 2em;
-}
-
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .first {
+      padding: 10px;
+    }
+  
+    .second {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .second ul {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .second ul li {
+      margin: 5px 0;
+    }
+  
+    .second img {
+      margin-bottom: 10px;
+    }
+  
+    /* Adjust text size for mobile */
+    .typing-demo,
+    .typing-demo-ii {
+      font-size: 1.5em; /* Smaller font size for mobile */
+    }
+  }
